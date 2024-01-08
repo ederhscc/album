@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-const Searchbar = () => {
-  const [searchFotos, setSearchFotos] = useState("");
+const Searchbar = ({ setQuery, setCategoria, setActivateSearch }) => {
   const categorias = [
     "Natureza",
     "Pessoa",
@@ -15,11 +12,15 @@ const Searchbar = () => {
       <input
         type="text"
         placeholder="Pesquisar fotos..."
-        value={searchFotos}
-        onChange={(e) => setSearchFotos(e.target.value)}
+        onChange={(e) => setQuery(e.target.value)}
       />
-      <button>Pesquisar</button>
-      <select>
+      <button onClick={() => setActivateSearch(true)}>Pesquisar</button>
+      <select
+        onChange={(e) => {
+          setCategoria(e.target.value);
+          setActivateSearch(true);
+        }}
+      >
         {categorias.map((categoria) => (
           <option key={categoria} value={categoria}>
             {categoria}
