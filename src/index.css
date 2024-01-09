@@ -5,6 +5,10 @@
     font-family: Helvetica;
 }
 
+body{
+    background: linear-gradient(to bottom, #89CFF0, #005C99);
+}
+
 .container {
     margin: 20px auto;
     width: 80%;
@@ -21,16 +25,42 @@
     width: 300px;
     padding: 10px;
     margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border: 1px solid #007BFF;
 }
 
 .search-bar button {
     padding: 11px 20px;
+    font-size: 16px;
     cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.search-bar button:hover {
+    background-color: #0056B3;
 }
 
 .search-bar select {
     padding: 10px;
     margin-left: 10px;
+    font-size: 16px;
+    padding: 0.7rem 1rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #007BFF;
+    background-color: #fff;
+    border: 1px solid #007BFF;
 }
 
 .album {
@@ -61,7 +91,7 @@
 }
 
 .foto-ampliada-container {
-    max-width: 62%;
+    max-width: 90%;
     max-height: 90%;
 }
 
@@ -69,4 +99,33 @@
     max-width: 45%;
     max-height: 90%;
     border-radius: 8px;
+}
+
+@media (max-width: 500px) {
+    .search-bar {
+        flex-wrap: wrap;
+    }
+    
+    .search-bar input {
+        padding: 7px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .search-bar button {
+        padding: 7px 15px;
+        font-size: 14px;
+    }
+
+    .search-bar select {
+        padding: 7px;       
+        font-size: 14px;
+        padding: 0.5rem 0.7rem;
+    }
+    
+    .album {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
 }
